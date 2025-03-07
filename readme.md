@@ -5,7 +5,7 @@
 Hey everyone! 👋🏽 Today, we officially kick off research for **Project QUARK**, an open-source **Automatic Deployment Platform** designed to make deploying our FastAPI projects seamless and automated here in [3D & Robotics lab](https://github.com/udsm-3d-robotics-studio)!  
 
 🔥 **Why “QUARK”?**  
-Quarks are the **fundamental building blocks of protons**, just as **QUARK** will be the foundation for automated deployments in our lab and beyond. **We’re solving a real-world challenge—simplifying deployments for ourselves first, with a vision to open-source it for others facing the same problem!**  
+Quarks are the **fundamental building blocks of protons and neutrons in the universe**, just as **QUARK** will be the foundation for automated deployments in our lab and beyond. **We’re solving a real-world challenge—simplifying deployments for ourselves first, with a vision to open-source it for others facing the same problem!**  
 
 🚀 **What We’re Building:**  
 We’ll use **FastAPI** for the backend and **React** (or Flutter for mobile UI) for the frontend. The platform will enable **GitHub-based deployments**, integrating **Docker and Kubernetes** for managing containers, with **SSH automation** for deployment control on remote servers.  
