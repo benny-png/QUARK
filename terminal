@@ -1,0 +1,8 @@
+mkdir -p quark/app/{models,schemas,api,services,tasks,utils} quark/tests quark/migrations
+touch quark/app/__init__.py
+touch quark/app/main.py
+touch quark/app/config.py
+touch quark/requirements.txt
+touch quark/docker-compose.yml
+touch quark/Dockerfile
+touch quark/README.md 

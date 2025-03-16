@@ -1,0 +1,62 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    ports:
+      - "8001:8000"
+    volumes:
+      - app_data:/app
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DATABASE_URL=sqlite:///./quark.db
+    networks:
+      - quark_network
+    group_add:
+      - "${DOCKER_GROUP_ID:-999}"  # Docker group ID
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  prometheus:
+    image: prom/prometheus:v2.45.0
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - prometheus_data:/prometheus
+    ports:
+      - "9090:9090"
+    networks:
+      - quark_network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  grafana:
+    image: grafana/grafana:10.0.0
+    volumes:
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
+      - grafana_data:/var/lib/grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD}
+    ports:
+      - "3000:3000"
+    networks:
+      - quark_network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  quark_network:
+    driver: bridge
+
+volumes:
+  app_data:
+  prometheus_data:
+  grafana_data: 

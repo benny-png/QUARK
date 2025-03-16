@@ -1,0 +1,15 @@
+fastapi>=0.95.0,<0.100.0
+pydantic>=1.6.2,<2.0.0
+sqlmodel>=0.0.8
+docker>=6.1.0
+prometheus-client>=0.14.1
+uvicorn>=0.20.0
+python-jose[cryptography]>=3.3.0
+python-multipart>=0.0.6
+passlib[bcrypt]>=1.7.4
+aiohttp>=3.8.0
+PyGithub>=1.58.0
+python-dotenv>=1.0.0
+email-validator>=2.0.0
+psutil
+GitPython>=3.1.0
